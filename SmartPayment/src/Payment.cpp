@@ -6,5 +6,6 @@ Payment::Payment(std::unique_ptr<ICard> card, std::unique_ptr<IDiscountProvider>
 
 void Payment::processPayment()
 {
-
+    auto cardNumebr = card_->getCardNumber();
+    discountProvider_->getDiscount(cardNumebr);
 }
